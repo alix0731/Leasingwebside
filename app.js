@@ -22,6 +22,8 @@ const cars = fs.readFileSync(__dirname + "/public/cars/cars.html", "utf-8");
 const contact = fs.readFileSync(__dirname + "/public/contact/contact.html", "utf-8");
 
 
+
+
 app.get("/", (req, res) => {
     res.send(header + home + footer);
 });
