@@ -2,14 +2,16 @@ var router = require("express").Router();
 
 var nodemailer = require('nodemailer');
 
+var dotenv = require('dotenv').config()
+
 
 
 
 var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: 'testeskea@gmail.com',
-        pass: 'kea12345'
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD
     }
 });
 
@@ -52,7 +54,7 @@ router.post("/sent", (req, res) => {
     
     });
 
-    res.redirect("/#kontakt");
+    res.redirect("/kontakt");
 });
 
 
