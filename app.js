@@ -1,17 +1,32 @@
+const { error } = require("console");
 const { static } = require("express");
 const express = require("express");
 const app = express();
-
-
-
 const fs = require("fs");
+const PORT = 8080;
+
+
+// database
+const db = require("./db");
+
+
+db.connection.connect(error => {
+if (error) {
+    console.log(error);
+} else {
+    console.log("Database connected succesfully...");
+}
+});
+
+// database
+
+
 
 app.use(express.json());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 const contactRouter = require("./routes/contact.js");
-
 app.use(contactRouter.router);
 
 
@@ -45,11 +60,11 @@ app.get("/kontakt", (rew, res) => {
 
 
 
-app.listen(8080, (error)=>{
+app.listen(PORT, (error)=>{
     if (error) {
      console.log(error);
     }
     else{
-    console.log("Server running on port", 8080);
+    console.log("Server running on port", PORT);
     }
 });

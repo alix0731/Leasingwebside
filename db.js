@@ -7,3 +7,7 @@ user: "nodeleasing",
 password: 	"Su0vU9~v_Y1v",
 database: "nodeleasing"
 });
+
+module.exports = {
+    connection
+};
