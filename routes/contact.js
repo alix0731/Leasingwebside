@@ -1,6 +1,11 @@
 var router = require("express").Router();
+<<<<<<< HEAD
 var nodemailer = require('nodemailer');
 require('dotenv').config()
+=======
+var nodemailer = require("nodemailer");
+require('dotenv').config();
+>>>>>>> 59086e243ef25dd8a3f8e98723006f597d52069e
 
 
 var transporter = nodemailer.createTransport({
