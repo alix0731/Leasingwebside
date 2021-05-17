@@ -6,19 +6,6 @@ const fs = require("fs");
 const PORT = 8080;
 
 
-// database
-const db = require("./db");
-
-
-db.connection.connect(error => {
-if (error) {
-    console.log(error);
-} else {
-    console.log("Database connected succesfully...");
-}
-});
-
-// database
 
 
 
@@ -27,7 +14,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 const contactRouter = require("./routes/contact.js");
+const customerRouter = require("./routes/customer.js");
+const carsRouter = require("./routes/cars.js");
 app.use(contactRouter.router);
+app.use(customerRouter.router);
+app.use(carsRouter.router);
 
 
 //header
@@ -40,20 +31,33 @@ const footer = fs.readFileSync(__dirname + "/public/footer/footer.html", "utf-8"
 const home = fs.readFileSync(__dirname + '/public/frontpage/home.html', "utf-8");
 //cars
 const cars = fs.readFileSync(__dirname + "/public/cars/cars.html", "utf-8");
+//order
+const order = fs.readFileSync(__dirname + "/public/cars/order.html", "utf-8");
+const payment = fs.readFileSync(__dirname + "/public/payment/payment.html", "utf-8");
 //contact
 const contact = fs.readFileSync(__dirname + "/public/contact/contact.html", "utf-8");
 
 
 
-
+//home
 app.get("/", (req, res) => {
     res.send(header + home + footer);
 });
 
+//biler
 app.get("/biler", (req, res) => {
     res.send(header + cars + footer);
 });
 
+app.get("/bestilling", (req, res) => {
+    res.send(header + order + footer);
+});
+
+app.get("/betalling", (req, res) => {
+    res.send(header + payment + footer);
+});
+
+//kontakt
 app.get("/kontakt", (rew, res) => {
     res.send(header + contact + footer);
 });

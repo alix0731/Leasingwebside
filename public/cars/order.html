@@ -1,0 +1,79 @@
+<script src="/cars/cars.js">
+
+</script>
+ 
+ <!-- ***** Call to Action Start ***** -->
+ <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br>
+                    <h2>Bestil din <em>bil her</em></h2>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+
+<br>
+
+<div class="container">
+    <form action="/addcustomer" method="POST">
+    
+      <div class="form-group">
+            <label for="firstname">Fornavn:</label>
+            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Type your firstname here..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Efternavn:</label>
+        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Type your lastname here..." required>
+  </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" class="form-control" placeholder="Type your email here..." required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Telefon:</label>
+        <input type="number" id="phone" name="phone" class="form-control" placeholder="Type your phone here..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Adresse:</label>
+        <input type="text" id="address" name="address" class="form-control" placeholder="Type your address here..." required>
+      </div>
+      <br>
+
+      <label for="car_id" class="form-group">Vælg bil:</label>
+        <select id="car_id" name="car_id" class="form-control" required>
+            <!--Bruger ajax her-->
+        </select>
+      
+      <br>
+      <div class="form-group">
+        <button class="btn btn-primary">Bestil</button>
+      </div>
+    
+    </form>
+    </div>
+
+    
+
+    
+
+
+<script>
+    
+    check();
+    getCars();
+    addCar();
+</script>
+
+
+
