@@ -49,7 +49,7 @@ function getCards(){
 
             $.each(data, function (index, value) {
                 $("#cars").append(
-                    "<div class='col-lg-4'> <div class='trainer-item'> <div class='image-thumb'> <img src='" + value.img + "' alt=''> </div> <div class='down-content'> <span><sup>DKK</sup>" + value.price +  "</span> <h4>" + value.name + "</h4> <p> <i class='fa fa-dashboard'></i> " + value.km + " km &nbsp;&nbsp;&nbsp; <i class='fa fa-cube'></i> " + value.year + " &nbsp;&nbsp;&nbsp; <i class='fa fa-cog'></i> " + value.model + " &nbsp;&nbsp;&nbsp; </p> <ul class='social-icons'> <li><a href='/bestilling'>+ View Car</a></li> </ul> </div> </div> </div>"
+                    "<div class='col-lg-4'> <div class='trainer-item'> <div class='image-thumb'> <img src='" + value.img + "' alt=''> </div> <div class='down-content'> <span><sup>Pris pr.måned </sup>" + value.price +  "DKK</span> <h4>" + value.name + "</h4> <p> <i class='fa fa-dashboard'></i> " + value.km + " km &nbsp;&nbsp;&nbsp; <i class='fa fa-cube'></i> " + value.year + " &nbsp;&nbsp;&nbsp; <i class='fa fa-cog'></i> " + value.model + " &nbsp;&nbsp;&nbsp; </p> <ul class='social-icons'> <li><a href='/bestilling'>+ Bestil</a></li> </ul> </div> </div> </div>"
                 );
                });
         
