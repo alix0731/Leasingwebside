@@ -29,8 +29,12 @@ const footer = fs.readFileSync(__dirname + "/public/footer/footer.html", "utf-8"
 
 //homepage
 const home = fs.readFileSync(__dirname + '/public/frontpage/home.html', "utf-8");
+//about
+const about = fs.readFileSync(__dirname + '/public/about/about.html', "utf-8");
 //cars
 const cars = fs.readFileSync(__dirname + "/public/cars/cars.html", "utf-8");
+//create car
+const addcar = fs.readFileSync(__dirname + "/public/cars/create.html", "utf-8");
 //order
 const order = fs.readFileSync(__dirname + "/public/cars/order.html", "utf-8");
 const payment = fs.readFileSync(__dirname + "/public/payment/payment.html", "utf-8");
@@ -44,6 +48,11 @@ app.get("/", (req, res) => {
     res.send(header + home + footer);
 });
 
+//about
+app.get("/about", (req, res) => {
+    res.send(header + about + footer);
+});
+
 //biler
 app.get("/biler", (req, res) => {
     res.send(header + cars + footer);
@@ -51,6 +60,10 @@ app.get("/biler", (req, res) => {
 
 app.get("/bestilling", (req, res) => {
     res.send(header + order + footer);
+});
+
+app.get("/opretbil", (req, res) => {
+    res.send(header + addcar + footer);
 });
 
 app.get("/betalling", (req, res) => {

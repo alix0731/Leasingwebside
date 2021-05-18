@@ -1,0 +1,61 @@
+
+
+ <!-- ***** Call to Action Start ***** -->
+ <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br>
+                    <h2>Opret <em>Bil</em></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+
+<br>
+
+<div class="container">
+    <form action="/addcar" method="POST">
+    
+      <div class="form-group">
+            <label for="name">Navn:</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Indtast bilens navn her..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" class="form-control" placeholder="Indtast bilens model her..." required>
+  </div>
+
+      <div class="form-group">
+        <label for="km">Antal KM kørt:</label>
+        <input type="number" id="km" name="km" class="form-control" placeholder="indtast antal km her..." required>
+      </div>
+      
+      <div class="form-group">
+        <label for="price">Pris:</label>
+        <input type="number" id="price" name="price" class="form-control" placeholder="indtast bilens pris her..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="year">Årgang:</label>
+        <input type="number" id="year" name="year" class="form-control" placeholder="indtast årgang her..." required>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="img">Billede:</label>
+        <input type="text" id="img" name="img" class="form-control" placeholder="indtast billedets webadresse her..." required>
+      </div>
+      
+      <br>
+      <div class="form-group">
+        <button class="btn btn-primary">Opret bil</button>
+      </div>
+    
+    </form>
+    </div>

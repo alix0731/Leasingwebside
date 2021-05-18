@@ -18,6 +18,19 @@ router.get("/allcars", (req, res) => {
     
 });
 
+router.post("/addcar", (req, res) => {
+    const car = req.body;
+
+    db.connection.query("INSERT INTO cars(name, model, km, price, year, img) VALUES(?, ?, ?, ?, ?, ?)", [car.name, car.model, car.km, car.price, car.year, car.img], (error, rows, fields) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("car added");
+            res.redirect("/opretbil");
+        }
+    });
+});
+
 
 
 
