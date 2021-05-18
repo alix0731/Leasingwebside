@@ -1,5 +1,5 @@
 const router = require("express").Router();
-var db = require("/Users/alirazaakhtar/Desktop/Leasingwebside/db.js");
+var db = require("./db.js");
 
 
 
