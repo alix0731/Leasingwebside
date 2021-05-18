@@ -60,7 +60,31 @@ function getCards(){
 
     });
 
-}
+};
+
+
+function getCarsForTable() {
+
+    $.ajax({
+
+        
+        url: "/allcars",
+        type: "GET",
+        contentType: "application/JSON",
+        success: function (data) {
+
+            $.each(data, function (index, value) {
+                $("#cartable").append(      "<tr> <td>" + value.id +"</td> <td>" + value.name + "</td> <td>" + value.model + "</td> <td>"+ value.km + "</td> <td>" + value.price + "</td> <td>" + value.year + "</td>  <td> <a href='/#' class='btn btn-success'>Ændre</a> </td>  <td><a href='/#' class='btn btn-danger'>Slet</a></td>  </tr>"
+                );
+               });
+        
+        },
+        error: function(){
+            console.log("Error");
+        }
+
+    });
+};
 
 
 

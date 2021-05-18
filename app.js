@@ -35,6 +35,9 @@ const about = fs.readFileSync(__dirname + '/public/about/about.html', "utf-8");
 const cars = fs.readFileSync(__dirname + "/public/cars/cars.html", "utf-8");
 //create car
 const addcar = fs.readFileSync(__dirname + "/public/cars/create.html", "utf-8");
+//edit car
+const editcar = fs.readFileSync(__dirname + "/public/cars/edit.html", "utf-8");
+
 //order
 const order = fs.readFileSync(__dirname + "/public/cars/order.html", "utf-8");
 const payment = fs.readFileSync(__dirname + "/public/payment/payment.html", "utf-8");
@@ -64,6 +67,10 @@ app.get("/bestilling", (req, res) => {
 
 app.get("/opretbil", (req, res) => {
     res.send(header + addcar + footer);
+});
+
+app.get("/redigerebiler", (req, res) => {
+    res.send(header + editcar +  footer);
 });
 
 app.get("/betalling", (req, res) => {
