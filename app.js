@@ -13,12 +13,16 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
+
+//const livechatRouter = require(".routes/livechat.js")
 const contactRouter = require("./routes/contact.js");
 const customerRouter = require("./routes/customer.js");
 const carsRouter = require("./routes/cars.js");
 app.use(contactRouter.router);
 app.use(customerRouter.router);
 app.use(carsRouter.router);
+//app.use(livechatRouter.router)
+
 
 
 //header
@@ -43,6 +47,8 @@ const order = fs.readFileSync(__dirname + "/public/cars/order.html", "utf-8");
 const payment = fs.readFileSync(__dirname + "/public/payment/payment.html", "utf-8");
 //contact
 const contact = fs.readFileSync(__dirname + "/public/contact/contact.html", "utf-8");
+//livechat
+const livechat = fs.readFileSync(__dirname + "/public/livechat/livechat.html", "utf-8");
 
 
 
@@ -78,9 +84,14 @@ app.get("/betalling", (req, res) => {
 });
 
 //kontakt
-app.get("/kontakt", (rew, res) => {
+app.get("/kontakt", (req, res) => {
     res.send(header + contact + footer);
 });
+
+//livechat
+app.get("/livechat", (req, res) => {
+    res.send(livechat);
+})
 
 
 
