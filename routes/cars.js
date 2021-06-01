@@ -1,5 +1,5 @@
 const router = require("express").Router();
-var db = require("./db.js");
+const db = require("./db.js");
 
 
 

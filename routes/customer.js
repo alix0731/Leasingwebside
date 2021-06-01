@@ -1,5 +1,5 @@
-var router = require("express").Router();
-var db = require("./db.js");
+const router = require("express").Router();
+const db = require("./db.js");
 
 router.post("/addcustomer", (req, res) => {
     const customer = req.body;

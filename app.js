@@ -14,14 +14,14 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 
-//const livechatRouter = require(".routes/livechat.js")
+const livechatRouter = require("./routes/livechat.js")
 const contactRouter = require("./routes/contact.js");
 const customerRouter = require("./routes/customer.js");
 const carsRouter = require("./routes/cars.js");
 app.use(contactRouter.router);
 app.use(customerRouter.router);
 app.use(carsRouter.router);
-//app.use(livechatRouter.router)
+app.use(livechatRouter.router);
 
 
 

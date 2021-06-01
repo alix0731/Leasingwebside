@@ -1,6 +1,6 @@
-var router = require("express").Router();
+const router = require("express").Router();
 
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 require("dotenv").config();
 
