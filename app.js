@@ -5,6 +5,44 @@ const app = express();
 const fs = require("fs");
 const PORT = 8080;
 
+//Livechat Start
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+  });
+  
+  io.on('connection', (socket) => {
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
+  });
+  
+  io.on('connection', (socket) => {
+    socket.on('chat message', (msg) => {
+      console.log('message: ' + msg);
+    });
+  });
+  
+  io.emit('some event', { someProperty: 'some value', otherProperty: 'other value' }); // This will emit the event to all connected sockets
+  
+  io.on('connection', (socket) => {
+    socket.broadcast.emit('hi');
+  });
+  
+  io.on('connection', (socket) => {
+    socket.on('chat message', (msg) => {
+      io.emit('chat message', msg);
+    });
+  });
+  
+
+//Livechat slut
+
 
 
 
@@ -21,7 +59,7 @@ const carsRouter = require("./routes/cars.js");
 app.use(contactRouter.router);
 app.use(customerRouter.router);
 app.use(carsRouter.router);
-app.use(livechatRouter.router);
+//app.use(livechatRouter.router);
 
 
 
@@ -95,7 +133,7 @@ app.get("/livechat", (req, res) => {
 
 
 
-app.listen(PORT, (error)=>{
+server.listen(PORT, (error)=>{
     if (error) {
      console.log(error);
     }
@@ -103,3 +141,4 @@ app.listen(PORT, (error)=>{
     console.log("Server running on port", PORT);
     }
 });
+

@@ -1,13 +1,8 @@
-const express = require('express');
-const router = require("express").Router();
+/*
 const http = require('http');
-const server = http.createServer(router);
+const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-
-router.get('/livechat', (req, res) => {
-  res.sendFile(__dirname + '/livechat.html');
-});
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -39,5 +34,6 @@ io.on('connection', (socket) => {
 });
 
 module.exports = {
-  router
-  };
+    server
+};
+*/
