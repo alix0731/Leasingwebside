@@ -33,6 +33,7 @@ const footer = fs.readFileSync(__dirname + "/public/footer/footer.html", "utf-8"
 const home = fs.readFileSync(__dirname + '/public/frontpage/home.html', "utf-8");
 //about
 const about = fs.readFileSync(__dirname + '/public/about/about.html', "utf-8");
+
 //cars
 const cars = fs.readFileSync(__dirname + "/public/cars/cars.html", "utf-8");
 //create car
@@ -45,6 +46,7 @@ const order = fs.readFileSync(__dirname + "/public/cars/order.html", "utf-8");
 const payment = fs.readFileSync(__dirname + "/public/payment/payment.html", "utf-8");
 //contact
 const contact = fs.readFileSync(__dirname + "/public/contact/contact.html", "utf-8");
+const confirmation = fs.readFileSync(__dirname + "/public/contact/confirmation.html", "utf-8");
 //livechat
 const livechat = fs.readFileSync(__dirname + "/public/livechat/livechat.html", "utf-8");
 
@@ -59,6 +61,7 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
     res.send(header + about + footer);
 });
+
 
 //biler
 app.get("/biler", (req, res) => {
@@ -84,6 +87,9 @@ app.get("/betalling", (req, res) => {
 //kontakt
 app.get("/kontakt", (req, res) => {
     res.send(header + contact + footer);
+});
+app.get("/confirmation", (req, res) => {
+    res.send(header + confirmation + footer);
 });
 
 //livechat

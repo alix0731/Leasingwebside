@@ -54,7 +54,7 @@ router.post("/sent", (req, res) => {
     
     });
 
-    res.redirect("/kontakt");
+    res.redirect("/confirmation");
 });
 
 
