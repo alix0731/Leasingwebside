@@ -9,6 +9,4 @@ RUN npm install
  
 COPY . .
 
-ENTRYPOINT ["tail"]
-
-CMD [ "node", "app.js", "-f","/dev/null" ]
+CMD [ "node", "app.js"]
