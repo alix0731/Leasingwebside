@@ -26,7 +26,7 @@ router.post("/addcar", (req, res) => {
             console.log(error);
         } else {
             console.log("car added");
-            res.redirect("/opretbil");
+            res.redirect("/biler");
         }
     });
 });
