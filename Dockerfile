@@ -8,5 +8,7 @@ COPY package-lock.json package-lock.json
 RUN npm install
  
 COPY . .
- 
-CMD [ "node", "app.js" ]
+
+ENTRYPOINT ["tail"]
+
+CMD [ "node", "app.js", "-f","/dev/null" ]
