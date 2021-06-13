@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
 });
 
 //about
-app.get("/about", (req, res) => {
+app.get("/aboutus", (req, res) => {
     res.send(header + about + footer);
 });
 
@@ -93,7 +93,7 @@ app.get("/confirmation", (req, res) => {
 });
 
 //livechat
-app.get("/livechat", (req, res) => {
+app.get("/livebesked", (req, res) => {
     res.send(header + livechat + footer);
 })
 
