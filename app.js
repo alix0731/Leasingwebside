@@ -17,10 +17,11 @@ app.use(express.urlencoded({ extended: true }));
 const contactRouter = require("./routes/contact.js");
 const customerRouter = require("./routes/customer.js");
 const carsRouter = require("./routes/cars.js");
+const bookingRouter = require("./routes/booking.js");
 app.use(contactRouter.router);
 app.use(customerRouter.router);
 app.use(carsRouter.router);
-//app.use(livechatRouter.router);
+app.use(bookingRouter.router);
 
 
 
@@ -41,6 +42,14 @@ const cars = fs.readFileSync(__dirname + "/public/cars/cars.html", "utf-8");
 const addcar = fs.readFileSync(__dirname + "/public/cars/create.html", "utf-8");
 //edit car
 const editcar = fs.readFileSync(__dirname + "/public/cars/edit.html", "utf-8");
+//edit car by id
+const editcarbyid = fs.readFileSync(__dirname + "/public/cars/editcar.html", "utf-8");
+
+//customers
+const customers = fs.readFileSync(__dirname + "/public/customers/customers.html", "utf-8");
+
+//booking
+const booking = fs.readFileSync(__dirname + "/public/booking/booking.html", "utf-8");
 
 //order
 const order = fs.readFileSync(__dirname + "/public/cars/order.html", "utf-8");
@@ -81,8 +90,21 @@ app.get("/redigerebiler", (req, res) => {
     res.send(header + editcar +  footer);
 });
 
+app.get("/redigerid", (req, res) =>{
+  res.send(header + editcarbyid + footer);
+});
+
 app.get("/betalling", (req, res) => {
     res.send(header + payment + footer);
+});
+
+//Customers
+app.get("/kunder", (req, res) => {
+  res.send(header + customers + footer);
+});
+
+app.get("/bestillinger", (req, res) => {
+  res.send(header + booking + footer);
 });
 
 //kontakt

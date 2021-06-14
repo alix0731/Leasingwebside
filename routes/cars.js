@@ -31,6 +31,27 @@ router.post("/addcar", (req, res) => {
     });
 });
 
+router.get("/getcar/:id", (req, res ) =>{
+   db.connection.query("SELECT * FROM cars WHERE ID = ?", [req.params.id], (error, rows, fields) => {
+        if(error){
+            console.log(error);
+        }else{
+            console.log("car is called");
+            res.send({data:rows[0]})
+        }
+   });
+});
+
+router.get("/delete/:id", (req, res)=> {
+    db.connection.query("DELETE FROM cars WHERE ID = ?", [req.params.id], (error, rows, fields) => {
+        if(error){
+            console.log(error)
+        }else{
+            console.log("car is deleted");
+            res.redirect("/redigerebiler")
+        }
+    })
+})
 
 
 
