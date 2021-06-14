@@ -10,8 +10,8 @@ require("dotenv").config();
 var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: process.env.EMAIL,
-        pass: process.env.EMAIL_PASSWORD
+        user: 'keatestes@gmail.com',
+        pass: 'kea12345'
     }
 });
 
@@ -21,8 +21,8 @@ router.post("/sent", (req, res) => {
   
     // sender til mig
     var mailOptions = {
-        from: process.env.EMAIL,
-        to: process.env.MAILRECIEVE,
+        from: 'keatestes@gmail.com',
+        to: 'omar.iatik@gmail.com',
         subject: "Emne: " + req.body.subject + ", " + "Afsender: " + req.body.name,
         text: req.body.message
     };
@@ -39,7 +39,7 @@ router.post("/sent", (req, res) => {
     // sender bekræftelse til personen
 
     var mailOptions = {
-        from: process.env.EMAIL,
+        from: 'keatestes@gmail.com',
         to: req.body.email,
         subject: req.body.subject,
         text: 'Tak for at du har kontaktet Node Leasing \n\nVi vender tilbage hurtigst muligt'
