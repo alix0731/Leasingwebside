@@ -13,7 +13,7 @@ function getCustomersForTable() {
         success: function (data) {
 
             $.each(data, function (index, value) {
-                $("#customertable").append(      "<tr> <td>" + value.id +"</td> <td>" + value.firstname + "</td> <td>" + value.lastname + "</td> <td>"+ value.email+ "</td> <td>" + value.phone + "</td> <td>" + value.address + "</td>  <td> <a href='/redigerid' class='btn btn-success'>Ændre</a> </td>  <td><a href='/deletecustomer/"+ value.id + "' class='btn btn-danger'>Slet</a></td>  </tr>"
+                $("#customertable").append(      "<tr> <td>" + value.id +"</td> <td>" + value.firstname + "</td> <td>" + value.lastname + "</td> <td>"+ value.email+ "</td> <td>" + value.phone + "</td> <td>" + value.address + "</td> <td><a href='/deletecustomer/"+ value.id + "' class='btn btn-danger'>Slet</a></td>  </tr>"
                 );
                });
         
