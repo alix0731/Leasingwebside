@@ -3,7 +3,7 @@ const { static } = require("express");
 const express = require("express");
 const app = express();
 const fs = require("fs");
-const PORT = 8080;
+const PORT = 80;
 
 
 
