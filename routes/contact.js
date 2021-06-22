@@ -16,6 +16,8 @@ var transporter = nodemailer.createTransport({
 });
 
 
+
+
 router.post("/sent", (req, res) => {
 
   
@@ -26,7 +28,7 @@ router.post("/sent", (req, res) => {
         subject: "Emne: " + req.body.subject + ", " + "Afsender: " + req.body.name,
         text: req.body.message
     };
-    transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, (error, info) => {
         if(error){
             console.log(error);
         }

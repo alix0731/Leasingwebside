@@ -33,7 +33,10 @@ function getCars() {
         }
 
     });
-};
+}
+
+    getCards();
+
 
 
 function getCards(){
